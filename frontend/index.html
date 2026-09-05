@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signature Authentication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="desk">
+
+  <header class="masthead">
+    <span class="mark">Verum</span>
+    <span class="mark-sub">Signature Authentication</span>
+  </header>
+
+  <main class="certificate" id="certificate">
+
+    <div class="certificate__intro">
+      <h1>Verify a signature</h1>
+      <p>Submit a scanned or photographed signature. The model examines stroke pattern and pressure characteristics to determine whether it matches a genuine reference.</p>
+    </div>
+
+    <!-- Upload stage -->
+    <section class="intake" id="intakeStage">
+      <label class="intake__slot" id="dropzone" for="fileInput" tabindex="0">
+        <input type="file" id="fileInput" accept="image/*" hidden>
+        <svg class="intake__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 6v24M24 6l-8 8M24 6l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 32v6a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="intake__label">Drop a signature image here</span>
+        <span class="intake__sub">or click to browse &middot; PNG, JPG</span>
+      </label>
+    </section>
+
+    <!-- Preview + action stage -->
+    <section class="preview" id="previewStage" hidden>
+      <div class="preview__frame">
+        <img id="previewImg" alt="Signature preview">
+      </div>
+      <div class="preview__meta">
+        <span id="fileName" class="preview__filename"></span>
+        <button type="button" id="changeBtn" class="link-btn">Choose a different file</button>
+      </div>
+      <button type="button" id="analyzeBtn" class="btn-primary">Analyze signature</button>
+    </section>
+
+    <!-- Loading stage -->
+    <section class="processing" id="processingStage" hidden>
+      <div class="processing__seal" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2" stroke-dasharray="4 6"/>
+        </svg>
+      </div>
+      <p>Analyzing signature&hellip;</p>
+    </section>
+
+    <!-- Error stage -->
+    <section class="notice" id="errorStage" hidden>
+      <p class="notice__title" id="errorTitle">Something went wrong</p>
+      <p class="notice__body" id="errorBody"></p>
+      <button type="button" id="retryBtn" class="link-btn">Try again</button>
+    </section>
+
+    <!-- Result stage -->
+    <section class="result" id="resultStage" hidden>
+      <div class="result__stamp" id="resultStamp">
+        <span id="resultLabel">REAL</span>
+      </div>
+      <dl class="result__details">
+        <div>
+          <dt>File</dt>
+          <dd id="resultFile"></dd>
+        </div>
+        <div>
+          <dt>Confidence</dt>
+          <dd id="resultConfidence"></dd>
+        </div>
+      </dl>
+      <button type="button" id="newCheckBtn" class="btn-secondary">Check another signature</button>
+    </section>
+
+  </main>
+
+  <footer class="foot-note">Runs locally against a FastAPI + TensorFlow backend.</footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
