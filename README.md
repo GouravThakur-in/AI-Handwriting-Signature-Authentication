@@ -29,17 +29,54 @@ This project automates it using computer vision and deep learning.
 - REST API (FastAPI)
 - Responsive HTML/CSS/JS frontend
 
-## 4. Architecture
-```
-Browser
-  -> HTML/CSS/JavaScript
-  -> FastAPI REST API
-  -> Preprocessing (OpenCV)
-  -> TensorFlow/Keras CNN models
-  -> Prediction / Feature Extraction
-  -> Similarity Calculation
-  -> JSON Response -> Frontend UI
-```
+signature-authentication/
+│
+├── api/
+│   ├── __init__.py
+│   └── main.py
+│
+├── data/
+│   └── raw/
+│       └── signatures/
+│           └── data/
+│               └── data/
+│                   ├── real/
+│                   └── forged/
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── models/
+│   └── signature_authentication_model.keras
+│
+├── notebooks/
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── preprocessing/
+│   │   ├── __init__.py
+│   │   └── dataset.py
+│   │
+│   └── training/
+│       ├── __init__.py
+│       └── train.py
+│
+├── tests/
+│
+├── screenshots/
+│   ├── frontend.png
+│   ├── prediction.png
+│   └── api_docs.png
+│
+├── venv/
+│
+├── .gitignore
+├── config.yaml
+├── requirements.txt
+└── README.md
 
 ## 5. Dataset Sources
 - Handwriting: [IAM Handwritten Forms Dataset](https://www.kaggle.com/datasets/naderabdelghany/iam-handwritten-forms-dataset)
