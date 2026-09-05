@@ -1,0 +1,30 @@
+# Environments
+venv/
+ai_cnn_proj/
+.conda/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Secrets - never commit these
+.env
+kaggle.json
+*.key
+
+# Data (too large for GitHub, downloaded/generated locally)
+data/raw/
+data/processed/
+
+# Model artifacts (too large for GitHub; document how to regenerate in README)
+models/*.keras
+models/*.h5
+models/*.npy
+models/*.pkl
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/

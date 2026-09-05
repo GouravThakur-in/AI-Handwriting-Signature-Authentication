@@ -1,0 +1,34 @@
+# Central configuration.
+# Nothing in this file should ever be a secret (no API keys, no passwords).
+
+image:
+  size: 128          # images resized to size x size before CNN
+  channels: 1         # grayscale
+
+training:
+  batch_size: 32
+  epochs: 30
+  learning_rate: 0.001
+  validation_split: 0.15
+  test_split: 0.15
+
+paths:
+  raw_handwriting: "data/raw/handwriting"
+  raw_signatures: "data/raw/signatures"
+  processed_handwriting: "data/processed/handwriting"
+  processed_signatures: "data/processed/signatures"
+  models_dir: "models"
+
+models:
+  handwriting_model: "models/handwriting_model.keras"
+  handwriting_labels: "models/handwriting_labels.json"
+  signature_model: "models/signature_model.keras"
+  signature_labels: "models/signature_labels.json"
+  signature_embedding_model: "models/signature_embedding_model.keras"
+  reference_embeddings: "models/reference_embeddings.npy"
+
+verification:
+  # This is a placeholder until we compute a real threshold from validation
+  # data in Step 13 of the plan. Do not treat this as final.
+  similarity_threshold: null
+  distance_metric: "cosine"   # or "euclidean"
