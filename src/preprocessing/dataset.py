@@ -1,4 +1,5 @@
 from pathlib import Path
+from PIL import Image
 from sklearn.model_selection import train_test_split
 
 
@@ -10,12 +11,26 @@ def get_image_files(folder_path):
 
     valid_extensions = (".jpg", ".jpeg", ".png")
 
-    return [
-        file
-        for file in folder_path.rglob("*")
-        if file.is_file()
-        and file.suffix.lower() in valid_extensions
-    ]
+    valid_files = []
+
+    for file in folder_path.rglob("*"):
+
+        if not file.is_file():
+            continue
+
+        if file.suffix.lower() not in valid_extensions:
+            continue
+
+        try:
+            with Image.open(file) as image:
+                image.verify()
+
+            valid_files.append(file)
+
+        except Exception:
+            print(f"Skipping invalid image: {file}")
+
+    return valid_files
 
 
 def create_dataset():
@@ -40,7 +55,7 @@ if __name__ == "__main__":
 
     image_paths, labels = create_dataset()
 
-    print(f"Total images: {len(image_paths)}")
+    print(f"\nTotal images: {len(image_paths)}")
     print(f"Total labels: {len(labels)}")
 
     print(f"\nReal signatures: {labels.count(1)}")

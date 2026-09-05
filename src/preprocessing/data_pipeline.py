@@ -1,8 +1,7 @@
 import tensorflow as tf
 
-from dataset import create_dataset
+from src.preprocessing.dataset import create_dataset
 from sklearn.model_selection import train_test_split
-
 
 IMAGE_SIZE = (224, 224)
 BATCH_SIZE = 32
