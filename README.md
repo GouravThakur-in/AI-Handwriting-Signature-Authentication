@@ -9,6 +9,15 @@ A CNN-based system that:
 2. Identifies which registered user a signature belongs to.
 3. Verifies whether an identified user's signature is genuine or forged.
 
+## screen shots
+<img width="899" height="483" alt="Screenshot 2026-09-05 131825" src="https://github.com/user-attachments/assets/ab1a10b1-edb1-4028-be52-7344eafaf4a1" />
+<img width="956" height="499" alt="Screenshot 2026-09-05 132624" src="https://github.com/user-attachments/assets/5c431236-a11d-452f-b2b4-53ef46d550a7" />
+<img width="752" height="499" alt="Screenshot 2026-09-05 132858" src="https://github.com/user-attachments/assets/e0b5c2cb-11f5-432e-9fbf-f297b7a43f42" />
+<img width="956" height="499" alt="Screenshot 2026-09-05 132624" src="https://github.com/user-attachments/assets/06883dd9-a210-4c7a-a310-0dea55deee91" />
+
+
+
+
 ## 2. Problem Statement
 Manual handwriting/signature verification is slow and error-prone at scale.
 This project automates it using computer vision and deep learning.
