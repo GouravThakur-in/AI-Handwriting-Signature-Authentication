@@ -28,7 +28,6 @@ This project automates it using computer vision and deep learning.
 - Signature Verification (genuine vs forged, with a validated similarity threshold)
 - REST API (FastAPI)
 - Responsive HTML/CSS/JS frontend
-
 signature-authentication/
 │
 ├── api/
@@ -54,24 +53,18 @@ signature-authentication/
 ├── notebooks/
 │
 ├── src/
-│   ├── __init__.py
-│   │
 │   ├── preprocessing/
-│   │   ├── __init__.py
 │   │   └── dataset.py
 │   │
 │   └── training/
-│       ├── __init__.py
 │       └── train.py
 │
 ├── tests/
 │
 ├── screenshots/
-│   ├── frontend.png
+│   ├── home.png
 │   ├── prediction.png
-│   └── api_docs.png
-│
-├── venv/
+│   └── api-docs.png
 │
 ├── .gitignore
 ├── config.yaml
